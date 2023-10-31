@@ -3,12 +3,15 @@ import Roof from "./house-parts/Roof";
 import Floor from "./house-parts/Floor";
 
 const House = (props) => {
+  let floors = [];
+  for (let i = 0; i < props.floors - 1; i++) {
+    floors.push(<Floor color={props.color} key={`${props.id}${i}`} />);
+  }
   return (
     <div>
       <Roof />
-      <Floor color="red" />
-      <Floor color="red" />
-      <Entrance color="red" />
+      {floors.length !== 0 && floors}
+      <Entrance color={props.color} />
     </div>
   );
 };
