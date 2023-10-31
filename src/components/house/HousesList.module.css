@@ -1,9 +1,10 @@
 .houses-list {
-  max-width: 65vw;
+  max-width: 50vw;
   max-height: 80vh;
-  min-width: 65vw;
   min-height: 80vh;
   overflow: auto;
+  overflow-y: overlay;
+  overflow-x: overlay;
   display: flex;
 }
 
