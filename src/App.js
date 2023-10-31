@@ -1,13 +1,19 @@
 import classes from "./App.module.css";
-import HousesList from "./components/HousesList";
+import HousesList from "./components/house/HousesList";
+import Form from "./components/Form";
 
 function App() {
   return (
-    <div className={classes.row}>
-      <div class={classes.column}>INPUT</div>
-      <div class={classes.column}>
-        <HousesList />
-      </div>
+    <div className={classes["house-constructor"]}>
+      <header>House Constructor</header>
+      <main>
+        <div className={classes.input}>
+          <Form />
+        </div>
+        <div className={classes.houses}>
+          <HousesList />
+        </div>
+      </main>
     </div>
   );
 }

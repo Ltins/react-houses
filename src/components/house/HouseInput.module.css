@@ -1,0 +1,23 @@
+.house-input input {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #d9e2f1;
+  background-color: #fff;
+  color: #414956;
+  font-size: 0.8rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.house-input label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.8rem;
+  font-family: "Quicksand", sans-serif;
+  color: #414956;
+}
+
+.house-input div {
+  float: left;
+  margin: 5px;
+}

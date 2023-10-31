@@ -1,0 +1,9 @@
+.roof {
+  width: 0;
+  height: 0;
+  border-top: 0;
+  border-left: 4rem solid transparent;
+  border-right: 4rem solid transparent;
+  border-bottom: 4rem solid #3e4344;
+  background-color: transparent;
+}
