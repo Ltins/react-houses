@@ -16,12 +16,12 @@ const Form = () => {
 
   return (
     <div className={classes["house-form"]}>
-      <div>
+      <div className={classes["house-form-header"]}>
         <h1>Control Panel</h1>
+        <button onClick={onClickHanlder}>+</button>
       </div>
-      <div>
+      <div className={classes["house-list"]}>
         <ul>
-          {isEmpty && <p>No houses present!</p>}
           {!isEmpty &&
             context.items.map((item) => (
               <li key={item.id}>
@@ -29,9 +29,6 @@ const Form = () => {
               </li>
             ))}
         </ul>
-      </div>
-      <div>
-        <button onClick={onClickHanlder}>CLICK</button>
       </div>
     </div>
   );

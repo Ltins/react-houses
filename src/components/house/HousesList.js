@@ -9,8 +9,8 @@ const HousesList = () => {
   const isEmpty = context.items.length === 0 ? true : false;
 
   return (
-    <>
-      <ul className={classes["houses-list"]}>
+    <div className={classes["houses-list"]}>
+      <ul>
         {!isEmpty &&
           context.items.map((item) => (
             <li key={item.id}>
@@ -18,7 +18,7 @@ const HousesList = () => {
             </li>
           ))}
       </ul>
-    </>
+    </div>
   );
 };
 

@@ -1,12 +1,15 @@
-.house-input input {
+.house-input input[type="number"] {
   display: block;
   padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #d9e2f1;
-  background-color: #fff;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #000000;
+  background-color: #93b3e5;
   color: #414956;
-  font-size: 0.8rem;
-  font-family: "Quicksand", sans-serif;
+}
+
+.house-input input[type="color"] {
+  display: block;
+  padding: 0.5rem;
 }
 
 .house-input label {
@@ -14,10 +17,14 @@
   font-weight: bold;
   font-size: 0.8rem;
   font-family: "Quicksand", sans-serif;
-  color: #414956;
+}
+
+.house-input button {
+  border-radius: 0.5rem;
+  border: 0.1rem solid #000000;
 }
 
 .house-input div {
   float: left;
-  margin: 5px;
+  margin: 1rem;
 }

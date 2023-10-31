@@ -2,25 +2,22 @@ import classes from "./App.module.css";
 import HousesList from "./components/house/HousesList";
 import Form from "./components/Form";
 
-//TODO: PAGE => NOT SCROLLABLE BUT ELEMENT ARE
-//TODO: STYLING FOR EMPTY HOUSES PARAGRAPH
-//TODO: STYLING FOR HOUSES ITSELF
-//TODO: CODE REFACTORING
-//TODO: COLORING
-//TODO: DELETE ICON
-//TODO: SIMPLE CSS ANIMS FOR BUTTONS (mb use framer-motion?)
+/*
+Must have:
+-Check for bugs + refactor code
+-House redesign
+-Change header styling
+Maybe:
+-Try to implement rendering via url params
+*/
 
 function App() {
   return (
     <div className={classes["house-constructor"]}>
       <header>House Constructor</header>
       <main>
-        <div className={classes.input}>
-          <Form />
-        </div>
-        <div className={classes.houses}>
-          <HousesList />
-        </div>
+        <Form />
+        <HousesList />
       </main>
     </div>
   );
