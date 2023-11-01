@@ -1,6 +1,6 @@
 React practice project. "Second" part with url modifying implementation.
 
-    Moding via url usage:\n
+    Editing via url usage:\n
 
     /polute|amount => polute houses list with {amount} random houses
 
