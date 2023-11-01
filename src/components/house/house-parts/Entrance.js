@@ -1,8 +1,12 @@
-import classes from "./Entrance.module.css";
+import classes from "./Floor.module.css";
 
 const Entrance = (props) => {
-  const entranceStyle = { backgroundColor: props.color };
-  return <div className={classes.entrance} style={entranceStyle}></div>;
+  return (
+    <div className={classes.floor} style={{ backgroundColor: props.color }}>
+      <div className={classes.door}></div>
+      <div className={classes.window}></div>
+    </div>
+  );
 };
 
 export default Entrance;

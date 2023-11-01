@@ -19,7 +19,7 @@ const Form = () => {
         <h1>Control Panel</h1>
         <button onClick={onClickHanlder}>+</button>
       </div>
-      <div className={classes["house-list"]}>
+      <div className={classes["house-input-list"]}>
         <ul>
           {!isEmpty &&
             context.items.map((item) => (

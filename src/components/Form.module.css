@@ -3,24 +3,23 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #d9e2f1;
+  background-color: #adccec;
   border-radius: 1.5rem;
   max-height: 80vh;
   min-width: max-content;
 }
 
-.house-list ul {
+.house-input-list ul {
   list-style-type: none;
   display: table;
   padding: 0;
 }
 
-.house-list li {
-  list-style-type: none;
+.house-input-list li {
   display: table-row;
 }
 
-.house-list {
+.house-input-list {
   overflow: auto;
   overflow-y: overlay;
   overflow-x: overlay;

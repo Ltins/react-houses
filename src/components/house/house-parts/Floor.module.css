@@ -2,4 +2,30 @@
   border: 1px solid #000000;
   width: 8rem;
   height: 4rem;
+  position: relative;
+}
+
+.door,
+.window,
+.window-second {
+  position: absolute;
+  width: 2rem;
+  left: 1rem;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+}
+
+.door {
+  top: 0.5rem;
+  height: 3rem;
+}
+
+.window,
+.window-second {
+  top: 1rem;
+  height: 2rem;
+}
+
+.window {
+  left: 5rem;
 }

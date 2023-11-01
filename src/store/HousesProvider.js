@@ -64,7 +64,6 @@ const housesReducer = (state, action) => {
   }
 
   if (action.type === "CHANGE_COLOR") {
-    console.log(action);
     const updatedHouses = state.items.map((item) => {
       let newColor = item.color;
       if (item.id === action.id) {
