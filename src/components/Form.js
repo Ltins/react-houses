@@ -10,8 +10,7 @@ const Form = () => {
   const isEmpty = context.items.length === 0 ? true : false;
 
   const onClickHanlder = () => {
-    const id = Math.random().toString(16).slice(2, 6);
-    context.addItem({ id, color: "#d30e0e", floors: 1 });
+    context.addRandom(1);
   };
 
   return (
@@ -25,7 +24,11 @@ const Form = () => {
           {!isEmpty &&
             context.items.map((item) => (
               <li key={item.id}>
-                <HouseInput id={item.id} />
+                <HouseInput
+                  id={item.id}
+                  color={item.color}
+                  floors={item.floors}
+                />
               </li>
             ))}
         </ul>

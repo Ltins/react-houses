@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import classes from "./HouseInput.module.css";
 import HousesContext from "../../store/houses-context";
@@ -6,8 +6,8 @@ import trashcan from "../../resources/trash-can.png";
 
 const HouseInput = (props) => {
   const context = useContext(HousesContext);
-  const [floors, setFloors] = useState(1);
-  const [color, setColor] = useState("#d30e0e");
+  const floors = props.floors;
+  const color = props.color;
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -25,12 +25,10 @@ const HouseInput = (props) => {
       finalValue = 1;
     }
 
-    setFloors(finalValue);
     context.changeFloors(props.id, finalValue);
   };
 
   const onColorChangeHandler = (event) => {
-    setColor(event.target.value);
     context.changeColor(props.id, event.target.value);
   };
 
