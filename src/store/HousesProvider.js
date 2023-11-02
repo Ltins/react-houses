@@ -88,7 +88,8 @@ const housesReducer = (state, action) => {
 
     for (let i = 0; i < action.amount; i++) {
       const id = Math.random().toString(16).slice(2, 6);
-      const color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      const color =
+        "#" + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, "0");
       const floors = Math.floor(Math.random() * 4 + 1);
       newItems.push({ id, color, floors });
     }
