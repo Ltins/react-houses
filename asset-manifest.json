@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-houses/static/css/main.80c6db6f.css",
-    "main.js": "/react-houses/static/js/main.863f3818.js",
+    "main.js": "/react-houses/static/js/main.a8f84f1a.js",
     "index.html": "/react-houses/index.html",
     "main.80c6db6f.css.map": "/react-houses/static/css/main.80c6db6f.css.map",
-    "main.863f3818.js.map": "/react-houses/static/js/main.863f3818.js.map"
+    "main.a8f84f1a.js.map": "/react-houses/static/js/main.a8f84f1a.js.map"
   },
   "entrypoints": [
     "static/css/main.80c6db6f.css",
-    "static/js/main.863f3818.js"
+    "static/js/main.a8f84f1a.js"
   ]
 }
