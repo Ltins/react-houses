@@ -46,7 +46,7 @@ const HomePage = () => {
       }
     }
 
-    navigate("/");
+    navigate("/react-houses");
   });
 
   return null;

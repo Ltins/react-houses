@@ -14,7 +14,7 @@ const ErrorPage = () => {
   return (
     <>
       <pre>{text}</pre>
-      <Link to="/">Try again? (Link to starting page)</Link>
+      <Link to="/react-houses">Try again? (Link to starting page)</Link>
     </>
   );
 };
