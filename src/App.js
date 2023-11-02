@@ -5,7 +5,7 @@ import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/react-houses",
     element: <HomePage />,
     errorElement: <ErrorPage />,
     children: [{ path: ":command", element: <ModingPage /> }],
