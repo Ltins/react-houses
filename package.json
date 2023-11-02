@@ -2,7 +2,7 @@
   "name": "react-houses",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ltins.github.io/react-houses",
+  "homepage": "https://ltins.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
