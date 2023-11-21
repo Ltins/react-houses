@@ -6,6 +6,7 @@ const HousesContext = createContext({
   changeColor: (id, color) => {},
   changeFloors: (id, floors) => {},
   removeItem: (id) => {},
+  addRandom: (amount) => {},
 });
 
 export default HousesContext;

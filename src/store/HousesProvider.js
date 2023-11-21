@@ -2,23 +2,25 @@ import { useReducer } from "react";
 
 import HousesContext from "./houses-context";
 
-const defaultHousesState = {
-  items: [],
-};
-
 const housesReducer = (state, action) => {
   if (action.type === "ADD") {
     const existingHouseIndex = state.items.findIndex(
       (item) => item.id === action.item.id
     );
     const existingHouse = state.items[existingHouseIndex];
+    let updatedHouses;
 
-    if (!existingHouse) {
-      const updatedHouses = state.items.concat(action.item);
-      return {
-        items: updatedHouses,
-      };
+    if (existingHouse) {
+      updatedHouses = [...state.items];
+    } else {
+      updatedHouses = state.items.concat(action.item);
     }
+
+    localStorage.setItem("houses", JSON.stringify({ items: updatedHouses }));
+
+    return {
+      items: updatedHouses,
+    };
   }
 
   if (action.type === "REMOVE") {
@@ -26,13 +28,19 @@ const housesReducer = (state, action) => {
       (item) => item.id === action.id
     );
     const existingHouse = state.items[existingHouseIndex];
+    let updatedHouses;
 
     if (existingHouse) {
-      const updatedHouses = state.items.filter((item) => item.id !== action.id);
-      return {
-        items: updatedHouses,
-      };
+      updatedHouses = state.items.filter((item) => item.id !== action.id);
+    } else {
+      updatedHouses = [...state.items];
     }
+
+    localStorage.setItem("houses", JSON.stringify({ items: updatedHouses }));
+
+    return {
+      items: updatedHouses,
+    };
   }
 
   if (action.type === "CHANGE_FLOORS") {
@@ -47,6 +55,8 @@ const housesReducer = (state, action) => {
         floors: newFloors,
       };
     });
+
+    localStorage.setItem("houses", JSON.stringify({ items: updatedHouses }));
 
     return {
       items: updatedHouses,
@@ -66,18 +76,44 @@ const housesReducer = (state, action) => {
       };
     });
 
+    localStorage.setItem("houses", JSON.stringify({ items: updatedHouses }));
+
     return {
       items: updatedHouses,
     };
   }
 
-  return defaultHousesState;
+  if (action.type === "POLUTE") {
+    let newItems = [];
+
+    for (let i = 0; i < action.amount; i++) {
+      const id = Math.random().toString(16).slice(2, 6);
+      const color =
+        "#" + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, "0");
+      const floors = Math.floor(Math.random() * 4 + 1);
+      newItems.push({ id, color, floors });
+    }
+    const updatedHouses = state.items.concat(newItems);
+
+    localStorage.setItem("houses", JSON.stringify({ items: updatedHouses }));
+
+    return {
+      items: updatedHouses,
+    };
+  }
+
+  return { items: [] };
 };
 
 const HousesProvider = (props) => {
+  const housesStateStr = localStorage.getItem("houses");
+  const localHousesState = housesStateStr
+    ? JSON.parse(housesStateStr)
+    : { items: [] };
+
   const [housesState, dispatchHousesAction] = useReducer(
     housesReducer,
-    defaultHousesState
+    localHousesState
   );
 
   const addItemToHousesHandler = (item) => {
@@ -96,12 +132,17 @@ const HousesProvider = (props) => {
     dispatchHousesAction({ type: "CHANGE_COLOR", id, color });
   };
 
+  const addRandomHousesHandler = (amount) => {
+    dispatchHousesAction({ type: "POLUTE", amount });
+  };
+
   const housesContext = {
     items: housesState.items,
     addItem: addItemToHousesHandler,
     removeItem: removeItemFromHousesHandler,
     changeColor: changeHouseColorHandler,
     changeFloors: changeHouseFloorsHandler,
+    addRandom: addRandomHousesHandler,
   };
 
   return (
